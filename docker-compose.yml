@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: ms-api-files
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - EXTERNAL_API_URL=https://echo-serv.tbxnet.com
+      - API_KEY=aSuperSecretKey
+
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    container_name: ms-app-files
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_FILES_URL=http://localhost:3000
