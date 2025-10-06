@@ -50,11 +50,9 @@ app → disponible en http://localhost:5173
 **Ver logs del contenedor:** `sudo docker logs ms-api-files` | `sudo docker logs ms-app-files`  
 **Apagar los contenedores:** `sudo docker-compose down`  
 **Limpiar contenedores::**  
-`
-sudo docker container prune -f
-sudo docker image prune -af
-sudo docker volume prune -f
-`  
+`sudo docker container prune -f`  
+`sudo docker image prune -af`  
+`sudo docker volume prune -f`  
 
 ## Uso de la api:
 `cd api`  
@@ -62,11 +60,9 @@ sudo docker volume prune -f
 `npm run start`  
 
 **Variables de entorno: .env**  
-`
-PORT=3000
-EXTERNAL_API_URL=https://echo-serv.tbxnet.com
-API_KEY=aSuperSecretKey
-`  
+`PORT=3000`  
+`EXTERNAL_API_URL=https://echo-serv.tbxnet.com`  
+`API_KEY=aSuperSecretKey`  
 
 **Ejecutar test:** `npm run test`  
 
